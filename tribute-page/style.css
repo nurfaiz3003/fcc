@@ -1,0 +1,64 @@
+body {
+    background-color: #e9c46a;
+    margin: 0px;
+    color: #264653;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+main {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: 100vh;
+    grid-template-areas: "img-title desc";
+}
+
+section {
+    position: relative;
+    bottom: 5%;
+    grid-area: desc;
+    padding-right: 15%;
+    text-align: justify;
+}
+
+h1 {
+    grid-area: desc;
+}
+
+header {
+    background-color: #264653;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+#img-div {
+    grid-area: img-title;
+    position: relative;
+}
+
+
+#tribute-info {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: large;
+}
+
+#title {
+    font-family: "Nunito Sans", sans-serif;
+}

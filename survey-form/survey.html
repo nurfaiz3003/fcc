@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>FCC Phone Dealer</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1 id="title">FCC Phone Dealer</h1>
+                <p id="description">Quality is our priority.</p>
+            </header>
+            <form id="survey-form">
+                <div class="form-group">
+                    <label id="name-label" for="name">Name: </label>
+                    <input id="name" type="text" placeholder="Input your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">Email: </label>
+                    <input id="email" type="email" placeholder="example: test@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label id="number-label" for="number">Age: </label>
+                    <input id="number" type="number" min="1" max="100" placeholder="Input your age.">
+                </div>
+                <div class="form-group">
+                    <p>Select Phone:</p>
+                    <select id="dropdown" name="phone" required>
+                        <option disabled selected value>Select Phone...</option>
+                        <option value="uphone">UPhone</option>
+                        <option value="samsing">Samsing</option>
+                        <option value="vovi">Vovi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p>Select Phone Color</p>
+                    <label><input type="radio" value="pink" name="color" class="input-radio" required>Pink</label>
+                    <label><input type="radio" value="red" name="color" class="input-radio">Red</label>
+                    <label><input type="radio" value="black" name="color" class="input-radio">Black</label>
+                </div>
+                <div class="form-group">
+                    <p>Select Your Phone Accesories: <span class="clue">(optional)</span></p>
+                    <label><input type="checkbox" value="hard-case" name="accesories" class="input-checkbox">Hard Case</label>
+                    <label><input type="checkbox" value="soft-case" name="accesories" class="input-checkbox">Soft Case</label>
+                    <label><input type="checkbox" value="screen-protection" name="accesories" class="input-checkbox">Screen Protection</label>
+                </div>
+                <div class="form-group">
+                    <p>Got Question?</p>
+                    <textarea id="questions" class="input-textarea" name="question" placeholder="Enter your question here..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

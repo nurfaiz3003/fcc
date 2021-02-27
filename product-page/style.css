@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/*font-family: 'Bebas Neue', cursive;*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+#page-wrapper {
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    width: 60vw;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: flex-start;
+}
+
+.logo > h1 {
+    margin-left: 10px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
+}
+
+.logo > img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+}
+
+#nav-bar > ul > li {
+    font-size: large;
+}
+
+header {
+    position: fixed;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 10vh;
+    top: 0;
+    display: flex;
+    padding: 0 5vw;
+    background-color: white;
+    color: black;
+    z-index: 10;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;  
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#nav-bar {
+    display: flex;
+}
+
+nav > ul {
+    display: flex;
+    width: 40vw;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+#video-section {
+    margin-top: 80px;
+    background-color: black;
+    z-index: -1;
+    color: white;
+    height: 90vh;
+    background-image: linear-gradient(
+        115deg,
+        rgba(0, 0, 0, 0.801),
+        rgba(255, 255, 255, 0.185)
+      ) ,url(https://s4.bukalapak.com/img/9973929092/large/Tas_Backpack_NewTale_Inc_OSBOURNE_24L.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#video-section > #desc {
+    width: 500px;
+    margin: 5vw;
+}
+
+#qualities {
+    display: flex;
+    flex-direction: row;
+    background-color:whitesmoke;
+    padding: 2rem;
+}
+
+.quality > .icon {
+    width: 150px;
+}
+
+#qualities > .quality {
+    display: flex;
+    width: 400px;
+    padding: 0 1.5rem;
+    margin: 20px;
+}
+
+.review:hover {
+    animation-name: review;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes review {
+    100% {
+        transform: scale(1.01);
+    }
+}
+
+#qualities > .quality > div {
+    padding: 0 0.5rem;
+}
+
+#reviews {
+    padding: 4rem 7rem;
+    justify-content: space-around;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    min-height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 10px rgba(136, 136, 136, 0.356);
+}
+
+.review > h2 {
+    display: block;
+    align-self: flex-end;
+    font-size: large;
+    text-decoration: underline;
+}
+
+#subscription {
+    flex-direction: column;
+    background-color:whitesmoke;
+    padding: 2rem;
+}
+
+#subscription > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#subscription > form > input[type="email"] {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    border: 0;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 5px;
+}
+
+#subscription > form > input[type="submit"] {
+    max-width: 300px;
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 0;
+    background-color: orange;
+    font-size: 1rem;
+}
+
+#subscription > form > input[type="submit"]:hover {
+    background-color: green;
+}
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 10vh;
+    bottom: 0;
+    padding: 0 5vw;
+    background-color: black;
+    color: white;
+}
+
+#footer > nav > ul > li > a {
+    color: white;
+}
+
+#footer > div, #footer > nav {
+    margin-bottom: 2rem;
+}
+
+#footer > nav {
+    margin-top: 2rem;
+} 
+
+@media (max-width: 900px) {
+    #header {
+        flex-wrap: wrap;
+    }
+
+    nav > ul {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .logo {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        padding: 10px 0 0 0;
+        justify-content: center;
+    }
+
+    #nav-bar > ul > li {
+        display: block;
+        font-size: large;
+        padding: 3px 0;
+    }
+
+    #reviews {
+        flex-wrap: wrap;
+        padding: 4rem 2rem;
+    }
+
+    #qualities {
+        flex-wrap: wrap;
+    }
+
+    #video-section {
+        flex-wrap: wrap-reverse;
+        margin-top: 180px;
+    }
+
+    #video-section > #desc {
+        margin-bottom: -10px;
+        text-align: center;
+        padding: 0;
+    }
+
+    p {
+        font-size: 2vmax;
+    }
+
+    a {
+        font-size: 2vmax;
+    }
+
+    h1, h2 {
+        font-size: 2.5vmax;
+    }
+}

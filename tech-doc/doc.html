@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PHP Types</Title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>PHP Types</header>
+            <ul>
+                <li><a href="#INTRODUCTION" class="nav-link">INTRODUCTION</a></li>
+                <li><a href="#Booleans" class="nav-link">Booleans</a></li>
+                <li><a href="#Integers" class="nav-link">Integers</a></li>
+                <li><a href="#Floating_point_numbers" class="nav-link">Floating point numbers</a></li>
+                <li><a href="#Strings" class="nav-link">Strings</a></li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="INTRODUCTION">
+                <header>INTRODUCTION</header>
+                <article>
+                    <p>PHP supports ten primitive types.</p>
+                    <p>Four scalar types:</p>
+                    <ul>
+                        <li>bool</li>
+                        <li>int</li>
+                        <li>float (floating-point number, aka double)</li>
+                        <li>string</li>
+                    </ul>
+                    <p>Four compound types:</p>
+                    <ul>
+                        <li>array</li>
+                        <li>object</li>
+                        <li>callable</li>
+                        <li>iterable</li>
+                    </ul>
+                    <p>And finally two special types:</p>
+                    <ul>
+                        <li>resource</li>
+                        <li>NULL</li>
+                    </ul>
+                    <p>Some references to the type "double" may remain in the manual. Consider double the same as float; the two names exist only for historic reasons.</p>
+                    <p>The type of a variable is not usually set by the programmer; rather, it is decided at runtime by PHP depending on the context in which that variable is used.</p>
+                    <code>
+                        &lt;?php<br />
+                        $a_bool = TRUE;   // a boolean<br />
+                        $a_str  = &quot;foo&quot;;  // a string<br />
+                        $a_str2 = 'foo';  // a string<br />
+                        $an_int = 12;     // an integer<br />
+                        <br />
+                        echo gettype($a_bool); // prints out:  boolean<br />
+                        echo gettype($a_str);  // prints out:  string<br />
+                        <br />
+                        // If this is an integer, increment it by four<br />
+                        if (is_int($an_int)) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;$an_int += 4;<br />
+                        }<br />
+                        <br />
+                        // If $a_bool is a string, print it out<br />
+                        // (does not print out anything)<br />
+                        if (is_string($a_bool)) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo &quot;String: $a_bool&quot;;<br />
+                        }<br />
+                        ?&gt;
+                    </code>
+                    <p>To forcibly convert a variable to a certain type, either cast the variable or use the settype() function on it.</p>
+                    <p>Note that a variable may be evaluated with different values in certain situations, depending on what type it is at the time. For more information, see the section on Type Juggling. The type comparison tables may also be useful, as they show examples of various type-related comparisons.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Booleans">
+                <header>Booleans</header>
+                <article>
+                    <p>To specify a bool literal, use the constants true or false. Both are case-insensitive.</p>
+                    <code>
+                        &lt;?php<br />
+                        $foo = True; // assign the value TRUE to $foo<br />
+                        ?&gt;
+                    </code>
+                    <p>Typically, the result of an operator which returns a bool value is passed on to a control structure.</p>
+                    <code>
+                        &lt;?php<br />
+                        // == is an operator which tests<br />
+                        // equality and returns a boolean<br />
+                        if ($action == &quot;show_version&quot;) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo &quot;The version is 1.23&quot;;<br />
+                        }<br />
+                        <br />
+                        // this is not necessary...<br />
+                        if ($show_separators == TRUE) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo &quot;&lt;hr&gt;n&quot;;<br />
+                        }<br />
+                        <br />
+                        // ...because this can be used with exactly the same meaning:<br />
+                        if ($show_separators) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;echo &quot;&lt;hr&gt;n&quot;;<br />
+                        }<br />
+                        ?&gt;
+                    </code>
+                </article>
+            </section>
+            <section class="main-section" id="Integers">
+                <header>Integers</header>
+                <article>
+                    <p>ints can be specified in decimal (base 10), hexadecimal (base 16), octal (base 8) or binary (base 2) notation. The negation operator can be used to denote a negative int.</p>
+                    <p>To use octal notation, precede the number with a 0 (zero). To use hexadecimal notation precede the number with 0x. To use binary notation precede the number with 0b.</p>
+                    <p>As of PHP 7.4.0, integer literals may contain underscores (_) between digits, for better readability of literals. These underscores are removed by PHP's scanner.</p>
+                    <p>Example #1 Integer literals</p>
+                    <code>
+                        &lt;?php<br />
+                        $a = 1234; // decimal number<br />
+                        $a = 0123; // octal number (equivalent to 83 decimal)<br />
+                        $a = 0x1A; // hexadecimal number (equivalent to 26 decimal)<br />
+                        $a = 0b11111111; // binary number (equivalent to 255 decimal)<br />
+                        $a = 1_234_567; // decimal number (as of PHP 7.4.0)<br />
+                        ?&gt;
+                    </code>
+                </article>
+            </section>
+            <section class="main-section" id="Floating_point_numbers">
+                <header>Floating point numbers</header>
+                <p>Floating point numbers (also known as "floats", "doubles", or "real numbers") can be specified using any of the following syntaxes:</p>
+                <code>
+                    &lt;?php<br />
+                    $a = 1.234; <br />
+                    $b = 1.2e3; <br />
+                    $c = 7E-10;<br />
+                    $d = 1_234.567; // as of PHP 7.4.0<br />
+                    ?&gt;
+                </code>
+            </section>
+            <section class="main-section" id="Strings">
+                <header>Strings</header>
+                <p>A string literal can be specified in four different ways:</p>
+                <ul>
+                    <li>single quoted</li>
+                    <li>double quoted</li>
+                    <li>heredoc syntax</li>
+                    <li>nowdoc syntax</li>
+                </ul>
+                <p>The simplest way to specify a string is to enclose it in single quotes (the character ').</p>
+                <p>To specify a literal single quote, escape it with a backslash (\). To specify a literal backslash, double it (\\). All other instances of backslash will be treated as a literal backslash: this means that the other escape sequences you might be used to, such as \r or \n, will be output literally as specified rather than having any special meaning.</p>
+                <code>
+                    &lt;?php<br />
+                    echo 'this is a simple string';<br />
+                    <br />
+                    echo 'You can also have embedded newlines in<br />
+                    strings this way as it is<br />
+                    okay to do';<br />
+                    <br />
+                    // Outputs: Arnold once said: &quot;I'll be back&quot;<br />
+                    echo 'Arnold once said: &quot;I'll be back&quot;';<br />
+                    <br />
+                    // Outputs: You deleted C:*.*?<br />
+                    echo 'You deleted C:*.*?';<br />
+                    <br />
+                    // Outputs: You deleted C:*.*?<br />
+                    echo 'You deleted C:*.*?';<br />
+                    <br />
+                    // Outputs: This will not expand: n a newline<br />
+                    echo 'This will not expand: n a newline';<br />
+                    <br />
+                    // Outputs: Variables do not $expand $either<br />
+                    echo 'Variables do not $expand $either';<br />
+                    ?&gt;
+                </code>
+            </section>
+        </main>
+    </body>
+</html>

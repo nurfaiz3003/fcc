@@ -1,5 +1,3 @@
-# FCC Page
-
 # Personal Portfolio Page
 https://codepen.io/nurfaiz3003/full/jOVzmPy
 
